@@ -39,7 +39,6 @@
           </div>
           <div class="column is-11" id="designerInfo">
             <h3>{{ designer }}</h3>
-            
           <p id="description"> {{ description }}</p></div>
         </div>
         <hr>
@@ -94,7 +93,7 @@ export default {
           this.occupation = response.data.project.owners[0].occupation
           this.description = response.data.project.description
           this.$forceUpdate()
-          this.$root.$emit("pageChanged", this.designer + "' s Work")
+          this.$root.$emit('pageChanged', this.designer + "' s Work")
           console.log(this.project)
         })
         .catch(error => console.log(error.stack))
@@ -103,15 +102,14 @@ export default {
   },
   mounted () {
     this.getDisignerProjects(this.$route.params.id)
-    
   },
-  watch:{
-    $route (to, from){
-      if (to.name == "project") {
-        this.$root.$emit("pageChanged", "PROJECT");
+  watch: {
+    $route (to, from) {
+      if (to.name === 'project') {
+        this.$root.$emit('pageChanged', 'PROJECT')
       }
     }
-  } 
+  }
 }
 </script>
 <style scoped>

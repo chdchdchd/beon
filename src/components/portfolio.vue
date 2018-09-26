@@ -68,15 +68,15 @@ export default {
   // clairehartley
   mounted () {
     this.getDisignerProjects(this.$route.params.id)
-    this.$root.$emit("pageChanged", "PORTFOLIO")
+    this.$root.$emit('pageChanged', 'PORTFOLIO')
   },
   watch:{
     $route (to, from){
       if (to.name == "portfolio") {
-        this.$root.$emit("pageChanged", "PORTFOLIO");
+        this.$root.$emit('pageChanged', 'PORTFOLIO')
       }
     }
-  } 
+  }
 }
 </script>
 
